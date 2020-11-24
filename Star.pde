@@ -1,7 +1,5 @@
 class Star //note that this class does NOT extend Floater
 {
-  class Star //note that this class does NOT extend Floater
-{
   private int myX, myY;
   private float mySize;
   public Star(){
@@ -13,5 +11,4 @@ class Star //note that this class does NOT extend Floater
     fill(255);
     ellipse(myX, myY, mySize, mySize); 
   }
-}
 }

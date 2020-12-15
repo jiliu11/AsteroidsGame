@@ -1,9 +1,10 @@
 class Spaceship extends Floater  
 {   
-    Spaceship(){
+  private double speedLimit = 20;  
+  public Spaceship(){
        corners = 4;   
-       xCorners = new int[]{16, -8, -4, -8};   
-       yCorners = new int[]{0 , 8, 0 ,-8};     
+       xCorners = new int[]{20, -10, -5, -10};   
+       yCorners = new int[]{0 , 10, 0 ,-10};     
        myColor = color(255);   
        myCenterX = 500; 
        myCenterY = 500; //holds center coordinates   
@@ -17,6 +18,18 @@ class Spaceship extends Floater
       myXspeed = 0;
       myYspeed = 0;
       myPointDirection = Math.random() * 360;
+    }
+    
+    public double getX(){
+      return myCenterX;
+    }
+    public double getY(){
+      return myCenterY;
+    }
+    
+    public boolean didIHitSpeedLimit(){
+      return dist(0,0, (float)myXspeed, (float)myYspeed) > speedLimit;
+        
     }
     
       

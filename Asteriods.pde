@@ -24,5 +24,5 @@ class Asteriod extends Floater{
   public void show(){
     noFill();
     super.show();
-    
   }
+}

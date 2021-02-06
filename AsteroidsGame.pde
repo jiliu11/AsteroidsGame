@@ -39,7 +39,7 @@ public void draw()
  if(bobship.checkDie()){
     dieShip.add(new Explosion(255,20, bobship.getX(), bobship.getY()));
   }
- bobship.checkDie(); 
+
   bobship.show();
   bobship.move();
 
@@ -58,7 +58,7 @@ public void draw()
     bobrock.get(i).show();
     if(bobrock.get(i).tooClose(bobship.getX(), bobship.getY())){
       bobrock.remove(i);
-      bobship.loseHp(16);
+      bobship.loseHp(15);
 if(i != 0)
         i--;
     }

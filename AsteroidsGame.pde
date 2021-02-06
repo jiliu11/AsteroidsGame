@@ -56,7 +56,8 @@ public void draw()
     if(bobrock.get(i).tooClose(bobship.getX(), bobship.getY())){
       bobrock.remove(i);
       bobship.loseHp(16);
-      i--;
+if(i != 0)
+        i--;
     }
     for(int a = 0; a < pews.size(); a++){
       if(bobrock.get(i).tooClose(pews.get(a).getX(), pews.get(a).getY())){

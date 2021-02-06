@@ -47,7 +47,7 @@ class Spaceship extends Floater
         myYspeed *= decreaseRatio;
         //println(dist(0,0, (float)myXspeed, (float)myYspeed));
       }
-      if(fireCoolDown != 0)
+      if(fireCoolDown != 0  && hp > 0)
         fireCoolDown --;
         
     }
@@ -81,7 +81,7 @@ class Spaceship extends Floater
       
       fill(255, 0, 0);
       if(hp > 0)
-        rect(15, 885, 65, 885 - (885-695)*hp*0.01);
+        rect(15, 885, 65, 885 - (885-695)*hp*0.01 ,10);
       rectMode(CORNER);
     }
     public void drawShootIcon(){
@@ -113,6 +113,9 @@ class Spaceship extends Floater
      public boolean checkDie(){
        if( hp == -5){
           hp =- 50;
+          speedLimit = 0;
+          fireCoolDown = 01;
+          myColor = 0;
           return true;
        }     
       return false;

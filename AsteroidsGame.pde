@@ -80,8 +80,8 @@ if(i != 0)
   
   for(int i = 0; i < dieShip.size(); i ++){
     dieShip.get(i).explode();
-    if(dieShip.size() > 0)
-      bobShip.loseHp(-200);
+   // if(dieShip.size() > 0)
+   //   bobShip.loseHp(-200);
   }
 
   

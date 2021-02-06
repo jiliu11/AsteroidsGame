@@ -3,8 +3,9 @@ Spaceship bobship;
 ArrayList<Asteriod> bobrock;
 Star[] stars = new Star[300]; 
 ArrayList<Bullet> pews;
+boolean shipDead = false;
 
-Explosion dieShip;
+ArrayList<Explosion> dieShip;
 
 boolean wPressed = false;
 boolean aPressed = false;
@@ -15,7 +16,10 @@ public void setup()
   size(1000, 900);
   frameRate(60);
   
+  dieShip = new ArrayList<Explosion>();
+  
   pews = new ArrayList<Bullet>();
+
   
   bobrock = new ArrayList<Asteriod>();
   for(int i = 0; i < 30; i++)
@@ -51,7 +55,7 @@ public void draw()
     bobrock.get(i).show();
     if(bobrock.get(i).tooClose(bobship.getX(), bobship.getY())){
       bobrock.remove(i);
-      bobship.loseHp(7);
+      bobship.loseHp(16);
       i--;
     }
     for(int a = 0; a < pews.size(); a++){
@@ -69,6 +73,13 @@ public void draw()
     }
      
   }
+  if(bobship.checkDie()){
+    dieShip.add(new Explosion(255,20, bobship.getX(), bobship.getY()));
+  }
+  
+  for(int i = 0; i < dieShip.size(); i ++){
+    dieShip.get(i).explode();
+  }
 
   
   bobship.drawHp();
@@ -82,7 +93,6 @@ public void draw()
     bobship.turn(3);
   if(spacePressed)
     bobship.fire(pews);
-  
 }
 public void keyPressed(){
   if((key == 'W' || key == 'w')){

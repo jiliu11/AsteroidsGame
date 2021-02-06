@@ -77,7 +77,7 @@ class Spaceship extends Floater
       rectMode(CORNERS);
       noStroke();
       fill(80,80,80);
-      rect(10, 690, 70, 890, 10);
+      rect(10, 690, 70, 890);
       
       fill(255, 0, 0);
       if(hp > 0)

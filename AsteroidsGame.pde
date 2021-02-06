@@ -36,7 +36,10 @@ public void draw()
   background(0);
   for(int i = 0; i < stars.length; i++)
     stars[i].show();
-  
+ if(bobship.checkDie()){
+    dieShip.add(new Explosion(255,20, bobship.getX(), bobship.getY()));
+  }
+ bobship.checkDie(); 
   bobship.show();
   bobship.move();
 
@@ -74,11 +77,6 @@ if(i != 0)
     }
      
   }
-  if(bobship.checkDie()){
-    bobship.checkDie();
-    dieShip.add(new Explosion(255,20, bobship.getX(), bobship.getY()));
-  }
-  
   for(int i = 0; i < dieShip.size(); i ++){
     dieShip.get(i).explode();
   }

@@ -76,6 +76,7 @@ if(i != 0)
   }
  if(bobship.checkDie()){
     dieShip.add(new Explosion(255,20, bobship.getX(), bobship.getY()));
+    bobship.loseHp(-100);
   }
   
   for(int i = 0; i < dieShip.size(); i ++){

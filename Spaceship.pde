@@ -77,11 +77,11 @@ class Spaceship extends Floater
       rectMode(CORNERS);
       noStroke();
       fill(80,80,80);
-      rect(10, 690, 70, 890);
+      rect(10, 690, 70, 890, 10);
       
       fill(255, 0, 0);
       if(hp > 0)
-        rect(15, 885, 65, 885 - (885-695)*hp*0.01 ,10);
+        rect(15, 885, 65, (885 - (885-695)*hp*0.01), 10);
       rectMode(CORNER);
     }
     public void drawShootIcon(){

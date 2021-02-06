@@ -112,7 +112,7 @@ class Spaceship extends Floater
      }
      public boolean checkDie(){
        if( hp == -5){
-          hp =- 50;
+          hp += 50;
           speedLimit = 0;
           fireCoolDown = 01;
           myColor = color(0);

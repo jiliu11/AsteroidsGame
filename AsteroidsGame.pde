@@ -74,6 +74,7 @@ public void draw()
      
   }
   if(bobship.checkDie()){
+    bobship.checkDie();
     dieShip.add(new Explosion(255,20, bobship.getX(), bobship.getY()));
   }
   

@@ -88,7 +88,7 @@ class Spaceship extends Floater
       rectMode(CORNERS);
       noStroke();
       fill(75,75,75);
-      rect(80, 890, 140, 830, 10);
+      rect(80, 890, 140, 830);
       
       fill(200,200,200);
       rect(85, 835 + 50 * ((float)fireCoolDown/(float)lastFireCd), 135, 885, 10);
@@ -115,7 +115,7 @@ class Spaceship extends Floater
           hp =- 50;
           speedLimit = 0;
           fireCoolDown = 01;
-          myColor = 0;
+          myColor = color(0);
           return true;
        }     
       return false;
